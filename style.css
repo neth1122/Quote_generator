@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Emblema+One&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Emblema One", serif;
+}
+body {
+    background: #bbc6fa;
+}
+.quote-box {
+    background: #fff;
+    width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
+}
+.quote-box h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+}
+.quote-box h2::after{
+    content: '';
+    width: 160px;
+    height: 3px;
+    border-radius: 3px;
+    background: rgb(23, 124, 229);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.quote-box blockquote{
+    font-size: 26px;
+    min-height: 110px;
+}
+.quote-box blockquote::before, .quote-box blockquote::after {
+    /* will comeback to style big quotation mark color light blue */
+    content: '';
+}
+.quote-box span{
+    display: block;
+    margin-top: 10px;
+    float: right;
+    position: relative;
+}
+.quote-box span::before{
+    content: 'by';
+    font-style: italic;
+    padding-right: 8px;
+    color: rgb(23, 124, 229);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.quote-box div{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.quote-box button {
+    background: rgb(23, 124, 229);
+    color: #fff;
+    border-radius: 25px;
+    border: 1px solid rgb(23, 124, 229);
+    width: 150px;
+    height: 50px;
+    display: flex;
+    cursor: pointer;
+    margin: 5px;
+    align-items: center;
+    justify-self: center;
+    padding: 25px;
+}
+.quote-box button svg {
+    width: 20px;
+    margin-right: 10px;
+}
+.quote-box button:nth-child(2) {
+    background: transparent;
+    color: #333;
+}
+@media (max-width: 800px) {
+    .quote-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .quote-box h2 {
+        font-size: 24px;
+    }
+
+    .quote-box blockquote {
+        font-size: 20px;
+        min-height: 80px;
+    }
+
+    .quote-box button {
+        width: 120px;
+        height: 40px;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .quote-box {
+        width: 98%;
+        padding: 10px;
+    }
+
+    .quote-box h2 {
+        font-size: 18px;
+    }
+
+    .quote-box blockquote {
+        font-size: 16px;
+        min-height: 60px;
+    }
+
+    .quote-box button {
+        width: 100px;
+        height: 36px;
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .quote-box div {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .quote-box span {
+        float: none;
+        text-align: right;
+        font-size: 14px;
+    }
+}
