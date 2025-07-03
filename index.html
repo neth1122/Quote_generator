@@ -7,6 +7,12 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ensure quote and author are not underlined */
+        blockquote, #author {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div class="quote-box">
@@ -33,16 +39,18 @@
             try {
                 const response = await fetch(url);
                 const data = await response.json();
-                quote.innerHTML = data.content || "No quote available.";
-                author.innerHTML = data.author || "Unknown";
+
+                // Check if the response contains expected keys
+                quote.textContent = data.content || "No quote available at the moment.";
+                author.textContent = data.author || "Unknown author";
+
             } catch (error) {
-                quote.innerHTML = "Failed to load quote.";
-                author.innerHTML = "";
+                quote.textContent = "Could not load quote.";
+                author.textContent = "";
                 console.error("Error fetching quote:", error);
             }
         }
 
-        // Load a quote on page load
         getquote(api_url);
     </script>
 </body>
