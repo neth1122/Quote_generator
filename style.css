@@ -91,36 +91,7 @@ body {
     color: #333;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    right: 0;
-}
-
-.dropdown-content a {
-    color: #333;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    cursor: pointer;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown.show .dropdown-content {
-    display: block;
-}
 
 @media (max-width: 800px) {
     .quote-box {
@@ -176,24 +147,5 @@ body {
         float: none;
         text-align: right;
         font-size: 14px;
-    }
-}
-
-@media (max-width: 600px) {
-    .dropdown-content {
-        min-width: 90vw;
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-        font-size: 14px;
-    }
-
-    .dropdown-content a {
-        padding: 14px 10px;
-        font-size: 14px;
-    }
-
-    .dropdown {
-        width: 100%;
     }
 }
