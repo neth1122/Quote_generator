@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html>
     <head>
         <meta charset="utf-8">
@@ -33,3 +34,76 @@
         <script src="script.js" async defer></script>
     </body>
 </html>
+=======
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Quotes</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .quote-box {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f0f0f0;
+        }
+        blockquote {
+            font-size: 1.4em;
+            font-style: italic;
+            text-decoration: none;
+        }
+        #author {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="quote-box">
+        <h2>Quote of the day</h2>
+        <blockquote id="quote">Loading...</blockquote>
+        <span id="author">Loading...</span>
+        <div>
+            <button type="button" onclick="getquote(api_url)">New Quote</button>
+        </div>
+    </div>
+
+    <script>
+        const quote = document.getElementById("quote");
+        const author = document.getElementById("author");
+        const api_url = "https://api.realinspire.live/v1/quotes/random";
+
+        async function getquote(url) {
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                // Handle array response
+                if (Array.isArray(data) && data.length > 0) {
+                    quote.textContent = data[0].content || "No quote found.";
+                    author.textContent = data[0].author || "Unknown";
+                } else {
+                    quote.textContent = "Unexpected response format.";
+                    author.textContent = "";
+                }
+            } catch (error) {
+                quote.textContent = "Failed to load quote.";
+                author.textContent = "";
+                console.error("Error fetching quote:", error);
+            }
+        }
+
+        getquote(api_url);
+    </script>
+</body>
+</html>
+>>>>>>> ea06a8fb663069c342ffc0fdcf400d96a5afc005
