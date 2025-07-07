@@ -7,10 +7,14 @@
     font-family: "Emblema One", serif;
 }
 body {
-    background: #bbc6fa;
+    background-image: url();
+    background-size: cover;
+    background-position: center;
 }
 .quote-box {
-    background: #fff;
+    background-color: transparent;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
     width: 700px;
     position: absolute;
     top: 50%;
@@ -19,7 +23,7 @@ body {
     padding: 40px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.15);
 }
 .quote-box h2 {
     font-size: 32px;
@@ -47,6 +51,7 @@ body {
     /* will comeback to style big quotation mark color light blue */
     content: '"';
     font-size: 30px;
+    color: rgb(23, 124, 229);
 }
 .quote-box span{
     display: block;
@@ -77,7 +82,7 @@ body {
     height: 50px;
     display: flex;
     cursor: pointer;
-    margin: 5px;
+    margin: 10px;
     align-items: center;
     justify-self: center;
     padding: 25px;
@@ -91,61 +96,130 @@ body {
     color: #333;
 }
 
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    height: 120px;
+}
+
+#share{
+    position: absolute;
+    bottom: 0%;
+    left: 46%;
+    width: 300px;
+    height: 60px;
+    transform-origin: top center;
+    transform: scale(0);
+    background: rgba(15, 15, 15, 0.5);
+    color: #fff;
+    padding: 20px;
+    font-family: 'roboto';
+    transition: .5s;
+    transition-delay: .5s;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 10px 0;
+    border-radius: 25px;
+}
+
+#share.active{
+    transform: scale(1);
+    transition-delay: .5s;
+}
+#social.active .social{
+    opacity: 1;
+    transition: .5s;
+    transition-delay: .5s;
+}
+
+#social{
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    line-height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 0 5px;
+    text-align: center;
+}
+
+#social:nth-child(1){
+    background: #1877f2;
+}
+#social:nth-child(2){
+    background: #000;
+}
+#social:nth-child(3){
+    background: #25d366;
+}
+#social:nth-child(4){
+    background: #e4405f
+}
 
 
 @media (max-width: 800px) {
     .quote-box {
-        width: 90%;
-        padding: 20px;
+        width: 95%;
+        padding: 16px;
     }
-
-    .quote-box h2 {
-        font-size: 24px;
+    .btn {
+        gap: 50px;
+        height: auto;
+        flex-direction: row;
     }
-
-    .quote-box blockquote {
-        font-size: 20px;
-        min-height: 80px;
-    }
-
-    .quote-box button {
-        width: 120px;
-        height: 40px;
+    #share {
+        width: 45vw;
+        left: 50%;
+        bottom: -20%;
         padding: 10px;
-        font-size: 14px;
+        border-radius: 25px;
     }
 }
 
 @media (max-width: 500px) {
     .quote-box {
-        width: 98%;
-        padding: 10px;
+        width: 99vw;
+        padding: 6px;
     }
-
     .quote-box h2 {
-        font-size: 18px;
-    }
-
-    .quote-box blockquote {
         font-size: 16px;
-        min-height: 60px;
     }
-
+    .quote-box blockquote {
+        font-size: 13px;
+        min-height: 40px;
+    }
     .quote-box button {
-        width: 100px;
+        width: 90vw;
+        min-width: 120px;
         height: 36px;
         padding: 6px;
         font-size: 12px;
     }
-
-    .quote-box div {
-        flex-direction: column;
+    .btn {
+        flex-direction: row;
         gap: 10px;
+        height: 50px;
     }
-
-    .quote-box span {
-        float: none;
-        text-align: right;
-        font-size: 14px;
+    #share {
+        width: 48vw;
+        left: 50%;
+        bottom: -30%;
+        padding: 8px;
+        font-size: 13px;
+        gap: 10px;
+        border-radius: 25px;
+    }
+    #social {
+        width: 25px;
+        height: 25px;
+        font-size: 18px;
+        line-height: 40px;
+        margin: 0 2px;
     }
 }
