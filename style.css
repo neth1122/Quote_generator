@@ -13,8 +13,8 @@ body {
 }
 .quote-box {
     background-color: transparent;
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     width: 700px;
     position: absolute;
     top: 50%;
