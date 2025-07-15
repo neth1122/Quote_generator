@@ -7,7 +7,7 @@
     font-family: "Emblema One", serif;
 }
 body {
-    background-image: url();
+    background-image: url(bg.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -180,12 +180,21 @@ body {
         padding: 10px;
         border-radius: 25px;
     }
+    #social {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        line-height: 40px;
+        margin: 2px 2px;
+        padding: 2px;
+    }
 }
 
 @media (max-width: 500px) {
     .quote-box {
         width: 99vw;
-        padding: 6px;
+        padding-left: 8px;
+        padding-right: 8px;
     }
     .quote-box h2 {
         font-size: 16px;
@@ -207,8 +216,8 @@ body {
         height: 50px;
     }
     #share {
-        width: 48vw;
-        left: 50%;
+        width: 52vw;
+        left: 48%;
         bottom: -30%;
         padding: 8px;
         font-size: 13px;
@@ -216,10 +225,11 @@ body {
         border-radius: 25px;
     }
     #social {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
         font-size: 18px;
-        line-height: 40px;
-        margin: 0 2px;
+        line-height: 30px;
+        margin: 2px 2px;
+        padding: 2px;
     }
 }

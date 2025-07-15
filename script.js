@@ -26,15 +26,28 @@ getquote(api_url);
 
 const shareBtn = document.getElementById('shareBtn');
 const shareOptions = document.getElementById('share');
+const link = 'https://neth1122.github.io/Quote_generator/';
+const fb = document.querySelector('.facebook');
+const twitter = document.querySelector('.twitter');
+const whatsapp = document.querySelector('.whatsapp');
+const instagram = document.querySelector('.instagram');
+
 shareBtn.addEventListener('click', () => {
     shareOptions.classList.toggle('active');
+    const quoteText = quote.textContent;
+    const authorText = author.textContent;
+    const shareMessage = `${quoteText} — ${authorText}`;
+
+    // Facebook
+    fb.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}&quote=${encodeURIComponent(shareMessage)}`;
+    // X (Twitter)
+    twitter.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareMessage)}&url=${encodeURIComponent(link)}`;
+    // WhatsApp
+    whatsapp.href = `https://wa.me/?text=${encodeURIComponent(shareMessage + ' ' + link)}`;
+    // Instagram (disable direct sharing, show alert)
+    instagram.href = '#';
+    instagram.onclick = (e) => {
+        e.preventDefault();
+        alert('Instagram does not support direct sharing via web. Please share the quote manually.');
+    };
 });
-
-
-const link = 'https://neth1122.github.io/Quote_generator/';
-
-const fb = document.querySelector('.facebook');
-fb.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}&quote=${encodeURIComponent(quote.textContent + " — " + author.textContent)}`;
-
-const twitter = document.querySelector('.twitter');
-twitter.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(quote.textContent + " — " + author.textContent)}&url=${encodeURIComponent(link)}`;
